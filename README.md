@@ -4,6 +4,3 @@
 ![image](https://github.com/zhoushiyi/canvasPainter/blob/master/img/presentation.gif)
 
 
-## clone repository
-example:
-    $ git clone git@github.com:zhoushiyi/canvasPainter.git
