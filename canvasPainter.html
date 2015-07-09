@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="canvasPainter.js"></script>
+	<script type="text/javascript" src="jBox.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript" src="jquery.awesome-cursor.js"></script>
+	<script type="text/javascript" src="jquery.colorPicker.js"></script>
+	<script type="text/javascript" src="jquery.json-2.4.js"></script>
+	<script type="text/javascript" src="mousetrap.min.js"></script>
+	<script type="text/javascript" src="canvas2image.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/jBox.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/canvasPainter.css">
+	<link rel="stylesheet" type="text/css" href="css/colorPicker.css">
+
+	<title>电子白板</title>
+</head>
+
+<body>
+
+<div class="container">
+	<div id="drawbox">
+		<div id="toolbar" class="bg-primary shadow">
+            <div class="btn-group" data-toggle="buttons">
+                <label id="mode-pencil" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="铅笔" onclick='changeMode(""+id+"")'>
+                    <input type="radio"><i class="fa fa-fw fa-pencil"></i>
+                </label>
+                <label id="mode-brush" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="画刷" onclick='changeMode(""+id+"")'>
+                    <input type="radio"><i class="fa fa-fw fa-paint-brush"></i>
+                </label>
+                <label id="mode-outlinedRect" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="空心矩形" onclick='changeMode(""+id+"")'>
+                    <input type="radio"><i class="fa fa-square-o"></i>
+                </label>
+                <label id="mode-filledRect" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="实心矩形" onclick='changeMode(""+id+"")'>
+                    <input type="radio"><i class="fa fa-square"></i>
+                </label>
+                <label id="mode-outlinedCircle" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="空心圆" onclick='changeMode(""+id+"")'>
+                    <input type="radio"><i class="fa fa-fw fa-circle-o"></i>
+                </label>
+                <label id="mode-filledCircle" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="实心圆" onclick='changeMode(""+id+"")'>
+                    <input type="radio"><i class="fa fa-fw fa-circle"></i>
+                </label>
+                <label id="mode-text" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="文字" style="border-right: 1px dashed DarkGray;" onclick='changeMode(""+id+"")'>
+                    <input type="radio" ><i class="fa fa-fw fa-font"></i>
+                </label>
+            </div>
+            <button id="undoBtn" type="button" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="撤消" onclick="undo()"><i class="fa fa-undo"></i></button>
+            <button id="repeatBtn" type="button" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="恢复" onclick="repeat()"><i class="fa fa-repeat"></i></button>
+            <button id="clearBtn" type="button" class="btn btn-primary drawtoolbtn" data-toggle="tooltip" data-placement="bottom" title="清空" ><i class="fa fa-trash-o"></i></button>
+            <button id="colorBtn" type="button" class="btn btn-primary drawtoolbtn" style="border-right: 1px dashed DarkGray;"><input id="colorPicker" name="color1" type="text" value="#000000"></button>
+		</div>
+		<!-- 画布 -->
+		<canvas id="canvas" width="800px" height="600px" style="position: absolute; z-index: 1; background-color:#FFFFCC;" class="shadow"></canvas>
+		<canvas id="auxCanvas" width="800px" height="600px" style="position: absolute; z-index: 2"></canvas>
+	</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.drawtoolbtn {
+  border-radius: 0px;
+  border: 0px;
+}
+
+#toolbar-right {
+	float: right;
+  	margin-right: 10px;
+}
+
+#toolbar {
+  	height: 33px;
+  	font-size: 20px;
+}
+
+.drawtoolfont {
+  font: status-bar;
+}
+
+#drawbox {
+	width: 800px;
+	padding: 0 0 0 0;
+	z-index: 1;
+}
+
+.shadow{ 
+	/*box-shadow: 0 0 3px #000;*/
+	-webkit-box-shadow: 3px 3px 3px;  
+  	-moz-box-shadow: 3px 3px 3px;  
+  	box-shadow: 3px 3px 3px;
+}
